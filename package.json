@@ -1,0 +1,26 @@
+{
+  "name": "twitterbackend",
+  "version": "1.0.0",
+  "description": "simulation of twitter backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ethan341/twitter_backend.git"
+  },
+  "author": "Akash Mule",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ethan341/twitter_backend/issues"
+  },
+  "homepage": "https://github.com/Ethan341/twitter_backend#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1",
+    "nodemon": "^2.0.22"
+  }
+}
