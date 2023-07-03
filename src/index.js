@@ -1,33 +1,21 @@
 import express from 'express'
-import { MongoClient } from 'mongodb'
-
-import {CredentialManager} from '../cred/credentials.js'
-
+import { Database } from '../src/config/database.js'
+import Tweet from './models/tweet.js';
 
 const app = express();
-const credentials = new CredentialManager();
+const database = new Database();
+database.connect();
 
 app.listen(3000,()=>{
     console.log('listening on port 3000 Triggered');
 }) 
+Tweet.create({
+  content : "Hello There This is first tweet",
+  likes : 3,
+  noOfRetweets : 2,
+  Comment : "Hii There"
+}).then((resoonse)=>{
+  console.log("Received response is",resoonse)
+})
+ 
 
-
-const client = new MongoClient(credentials.getMongoDBUrl());
-
-async function run() {
-  try {
-    console.log("Started Searching Data in MongoDB....");
-    const database = client.db('sample_mflix');
-    const movies = database.collection('movies');
-
-    // Query for a movie that has the title 'Back to the Future'
-    const query = { title: 'Back to the Future' };
-    const movie = await movies.findOne(query);
-
-    console.log(movie);
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
