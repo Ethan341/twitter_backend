@@ -1,7 +1,10 @@
 import Hashtag from "../models/hashtag.js";
+import CRUDRepository from "./crud-repository.js";
 
-class HashtagRepository{ // To perform CRUD operations on Tweets
-
+class HashtagRepository extends CRUDRepository{ // To perform CRUD operations on Tweets
+  constructor(){
+    super(Hashtag);
+  }
   async create(data){
     try{
         let Hashtag = await Hashtag.create(data);

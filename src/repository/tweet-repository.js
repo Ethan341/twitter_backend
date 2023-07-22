@@ -1,7 +1,9 @@
 import Tweet from "../models/tweet.js";
 
-class TweetRepository{ // To perform CRUD operations on Tweets
-
+class TweetRepository extends CRUDRepository{ // To perform CRUD operations on Tweets
+  constructor(){
+    super(Tweet);
+  }
   async create(data){
     try{
         let tweet = await Tweet.create(data);

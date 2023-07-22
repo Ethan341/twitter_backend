@@ -1,9 +1,8 @@
 import express from "express";
+import { createTweet } from "../controller/tweets-controller.js";
 
 const router = express.Router();
 
-router.post('/tweets',()=>{
-    console.log("Request Received");
-})
+router.post('/tweets',createTweet)
 
 export default router;
