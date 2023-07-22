@@ -6,8 +6,8 @@ export async function test(){
     console.log("Test Code is Running");
     const tweetRepo = new TweetRepository();
     let tweetsCollection = await tweetRepo.getAllTweets()
-    let tweet = await tweetRepo.deleteTweet({_id:'64a304c2fe8afd832f58fb77'});
-    console.log(tweet);
+    //let tweet = await tweetRepo.deleteTweet({_id:'64a304c2fe8afd832f58fb77'});
+    //console.log(tweet);
     //console.log(tweetsCollection);
     //createTweet();
     //createHashtag();
